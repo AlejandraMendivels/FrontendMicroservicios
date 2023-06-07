@@ -59,10 +59,6 @@ document.getElementById('guardar').addEventListener('click', () => {
     let nota = formulario['nota'].value;
     let codigoEstudiante = formulario['codigoEstudiante'].value;
 
-    if (descripcion === "" || nota === "" || codigoEstudiante === "") {
-        alert("Por favor, complete todos los campos.");
-        return;
-    }
 
     if (indexActividad == -1) {
         $.ajax({
@@ -81,15 +77,10 @@ document.getElementById('guardar').addEventListener('click', () => {
             location.reload();
         });
     } else if (indexActividad == 1) {
-        // MODIFICAR
         let formularioModificar = document.forms['formularioActividad'];
         let descripcionModificar = formularioModificar['descripcion'].value;
         let notaModificar = formularioModificar['nota'].value;
 
-        if (descripcionModificar === "" || notaModificar === "") {
-            alert("Por favor, complete todos los campos.");
-            return;
-        }
 
         $.ajax({
             url: 'http://localhost:8000/modificaractividades' + id,
@@ -114,7 +105,6 @@ let modificar = function (actividadId) {
     id = actividadId;
 };
 
-//ELIMINAR
 let eliminar = function (id) {
     $.ajax({
         url: 'http://localhost:8000/eliminaractividades' + id,
