@@ -1,0 +1,33 @@
+.page-content {
+    display: grid;
+    grid-template-areas: 
+    "titulo titulo"
+    "notas promedio";
+    grid-gap: 20px;
+    width: 60%;
+    margin: auto;
+    height: 100vh;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 60px calc(100vh - 60px);
+}
+
+.page-content .titulo{
+    grid-area: titulo;
+    width: 100%;
+    text-align: center;
+}
+
+.page-content .notas-content{
+    grid-area: notas;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.page-content .promedio-content{
+    grid-area: promedio;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 14px;
+}
